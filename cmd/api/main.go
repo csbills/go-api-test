@@ -8,6 +8,7 @@ import (
 
 type Response struct {
 	Message string `json:"message"`
+	Status  string `json:"status"`
 }
 
 func main() {
@@ -19,6 +20,7 @@ func main() {
 
 		response := Response{
 			Message: "Hello World",
+			Status:  "OK",
 		}
 
 		if err := json.NewEncoder(w).Encode(response); err != nil {
